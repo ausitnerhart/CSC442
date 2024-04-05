@@ -2,14 +2,14 @@
 from ftplib import FTP
 
 # number of bits to use from each permission
-METHOD = 10
+METHOD = 7
 
 # FTP server details
 IP = "138.47.165.156"
 PORT = 21
 USER = "anonymous"
 PASSWORD = ""
-FOLDER = "/10"
+FOLDER = "/7"
 USE_PASSIVE = True # set to False if the connection times out
 
 # connect and login to the FTP server
@@ -70,6 +70,12 @@ def seven_bit_decode(binary:str)->str:
     """Decode a binary string using seven bit ascii.
     Borrowed from Austin Adams (Binary Decoder)
     """
+    # error checking
+    if len(binary) % 7 != 0:
+        print("Cannot break binary string into 7-bit chunks")
+        exit()
+
+
     # Break the string into chunks of 7-bits and store them into an array
     asciiArray = []
     for i in range(0, len(binary), 7):
