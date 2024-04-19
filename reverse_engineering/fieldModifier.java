@@ -1,9 +1,9 @@
 // this file was written by Connor Ettinger (Team Axoltol) for challenge 2
 /* README - File Use Instructions:
- * 1. Replace all four instances of "Countdown"
+ * 1. Replace all four instances of "Example"
  * (on lines 27, 30, and 41) with the name of
  * the.class file (e.g., if the file is
- * Challenge.class, replace Countdown
+ * Challenge.class, replace Example
  * with Challenge)
  * 
  * 2. go to line 34, and replace the first arguement
@@ -23,11 +23,11 @@ import java.lang.reflect.*;
 public class fieldModifer {
     public static void main(String[] args) throws Exception {
         // create the object we're dealing with
-        // TODO: replace "Countdown" with the name of the .class file
-        Countdown ex = new Countdown();
+        // TODO: replace "Example" with the name of the .class file
+        Example ex = new Example();
 
         // generate list of fields in the class
-        Field [] fields = Countdown.class.getDeclaredFields();
+        Field [] fields = Example.class.getDeclaredFields();
 
         // TODO: replace "field_num" with the number of the field you want to change
         // TODO: replace "field_val" with the value you want to change the field to
@@ -38,7 +38,7 @@ public class fieldModifer {
         ex.main(null);
     }
 
-    private static Field[] changeField(int field_num, int field_val, Countdown cls, Field[] fields) throws Exception {
+    private static Field[] changeField(int field_num, int field_val, Example cls, Field[] fields) throws Exception {
         fields[field_num].setAccessible(true);
         fields[field_num].set(cls, field_val);
         return fields;

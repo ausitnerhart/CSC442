@@ -1,9 +1,9 @@
 // file written by Connor Ettinger (Team Axoltol) for challenge 2
 /* README - File Use Instructions
- * 1. Replace all three instances of "Test"
+ * 1. Replace all three instances of "Example"
  * (on lines 24 and 113) with the name of the
  * .class file (e.g., if the file is Challenge.class,
- * replace Test with Challenge)
+ * replace Example with Challenge)
  * 
  * 2.(in main) Comment out function calls
  * for info you don't want (i.e., if you
@@ -20,8 +20,8 @@ class infoObtainer {
         // for anything you don't want to see/do
 
         // create the object to be inspected
-        // TODO: replace "Test" with the name of the .class file
-        Test ex = new Test();
+        // TODO: replace "Example" with the name of the .class file
+        Example ex = new Example();
 
         // create a class file and store object in it (for finding class info)
         Class c = ex.getClass();
@@ -110,7 +110,7 @@ class infoObtainer {
 
     private static void printFields(Class c) throws Exception{
         System.out.println("\nGrabbing Fields");
-        Field[] fields = Test.class.getDeclaredFields();
+        Field[] fields = Example.class.getDeclaredFields();
         int field_num = 0;
         for (Field field : fields){
             fields[field_num].setAccessible(true);
