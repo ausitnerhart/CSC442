@@ -1,7 +1,7 @@
 // file written by Connor Ettinger (Team Axoltol) for challenge 2
 /* README - File Use Instructions
- * 1. Replace all three instances of "Example"
- * (on lines 24 and 113) with the name of the
+ * 1. Replace all four instances of "Example"
+ * (on lines 24, 111, and 113) with the name of the
  * .class file (e.g., if the file is Challenge.class,
  * replace Example with Challenge)
  * 
@@ -41,7 +41,7 @@ class infoObtainer {
         printMethods(c, true);
 
         // print all of the fields of the class
-        printFields(c);
+        printFields(ex);
     }
 
     private static void printSuperClass(Class c, boolean printAllSups) throws Exception{
@@ -108,7 +108,7 @@ class infoObtainer {
         System.out.println("\n---------------------------------------");
     }
 
-    private static void printFields(Class c) throws Exception{
+    private static void printFields(Example ex) throws Exception{
         System.out.println("\nGrabbing Fields");
         Field[] fields = Example.class.getDeclaredFields();
         int field_num = 0;
@@ -117,7 +117,7 @@ class infoObtainer {
             field.setAccessible(true);
             System.out.println("field "+ field_num + ": " + field);
             try {
-                System.out.println("field "+ field_num + " of class c: " + field.get(c) + "\n");
+                System.out.println("field "+ field_num + " value: " + field.get(ex) + "\n");
             } catch (Exception e) {
                 System.out.println("cannot print value of this field, sorry\n");
             }
